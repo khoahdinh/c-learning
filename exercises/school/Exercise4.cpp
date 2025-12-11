@@ -16,6 +16,7 @@ int main() {
   // Kiem tra thang
   if (month < 1 || month > 12) {
     printf("Thang khong hop le");
+    return 0;
   }
 
   // Kiem tra nam nhuan, trả về true or false
