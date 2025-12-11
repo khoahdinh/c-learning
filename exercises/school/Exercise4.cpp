@@ -13,91 +13,40 @@ int main() {
   printf("Nhap so thang (1-12) va so nam: ");
   scanf("%d %d", &month, &year);
 
-  if (year % 400 == 0 || ((year % 4 == 0) && (year % 100 != 0))) {
-    switch (month) {
-    case 1:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 2:
-      printf("So ngay cua thang %d nam %d la: 29 ngay", month, year);
-      break;
-    case 3:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 4:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 5:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 6:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 7:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 8:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 9:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 10:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 11:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 12:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-
-    default:
-      break;
-    }
-  } else {
-    switch (month) {
-    case 1:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 2:
-      printf("So ngay cua thang %d nam %d la: 28 ngay", month, year);
-      break;
-    case 3:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 4:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 5:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 6:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 7:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 8:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 9:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 10:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-    case 11:
-      printf("So ngay cua thang %d nam %d la: 30 ngay", month, year);
-      break;
-    case 12:
-      printf("So ngay cua thang %d nam %d la: 31 ngay", month, year);
-      break;
-
-    default:
-      break;
-    }
+  // Kiem tra thang
+  if (month < 1 || month > 12) {
+    printf("Thang khong hop le");
   }
+
+  // Kiem tra nam nhuan, trả về true hoac false
+  int namNhuan = (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
+
+  int days;
+
+  switch (month) {
+  case 1:
+  case 3:
+  case 5:
+  case 7:
+  case 8:
+  case 10:
+  case 12:
+    days = 31;
+    break;
+
+  case 4:
+  case 6:
+  case 9:
+  case 11:
+    days = 30;
+    break;
+
+  case 2:
+    days = namNhuan ? 29 : 28;
+    break;
+  }
+
+  printf("So ngay cua thang %d nam %d la: %d", month, year, days);
 
   return 0;
 }
