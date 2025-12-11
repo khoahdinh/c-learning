@@ -15,6 +15,7 @@ int main() {
   printf("Nhap ba so nguyen a, b, c: ");
   scanf("%d %d %d", &a, &b, &c);
 
+  // Case a = 0
   if (a == 0) {
     printf("Khong phai phuong trinh bac 2");
     return 0;
