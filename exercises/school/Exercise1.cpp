@@ -22,8 +22,8 @@ int main() {
   float area = length * width;
 
   // Output result
-  printf("Chu vi cua hinh chu nhat la: %.2f \n", perimeter);
-  printf("Dien tich cua hinh chu nhat la: %.2f", area);
+  printf("Chu vi cua hinh chu nhat la = %.2f \n", perimeter);
+  printf("Dien tich cua hinh chu nhat la = %.2f", area);
 
   return 0;
 }
