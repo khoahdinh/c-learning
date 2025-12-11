@@ -18,7 +18,7 @@ int main() {
     printf("Thang khong hop le");
   }
 
-  // Kiem tra nam nhuan, trả về true hoac false
+  // Kiem tra nam nhuan, trả về true or false
   int namNhuan = (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
 
   int days;
