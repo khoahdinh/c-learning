@@ -19,7 +19,7 @@ int main() {
   printf("Nhap chieu dai va chieu rong: ");
   scanf("%d %d", &d, &r);
 
-  // Check h
+  // Check d, r
   if (d < 2 || r < 2) {
     printf("Nhap sai chieu dai va rong");
     return 0;
