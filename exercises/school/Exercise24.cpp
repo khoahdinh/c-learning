@@ -11,7 +11,7 @@ Sau khi chọn, yêu cầu nhập nhiệt độ tương ứng và in ra kết qu
 
 int main() {
 
-  // Input: d, r
+  // Input: c, f
   int command;
   float c, f;
 
