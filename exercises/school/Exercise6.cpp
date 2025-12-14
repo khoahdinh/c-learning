@@ -9,7 +9,7 @@ ra 𝑁! • Quy ước: 0! = 1.
 int main() {
   // Input: n
   int n;
-  long long result =1;
+  unsigned long long result =1;
 
   printf("Nhap so n: ");
   scanf("%d", &n);
