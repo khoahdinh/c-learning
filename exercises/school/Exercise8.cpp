@@ -24,7 +24,7 @@ int main() {
   int isPrime = 1;
 
   // Solve...
-  for (int i = 2; i <= sqrt(n); i++) {
+  for (int i = 2; i*i <= n; i++) {
     if (n % i == 0) {
       isPrime = 0;
       // Dừng khi tìm ra ước
