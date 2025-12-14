@@ -32,7 +32,7 @@ int main() {
   // Print first two numbers
   printf("%d %d", first, second);
 
-  /// Generate remaining Fibonacci numbers
+  // Generate remaining Fibonacci numbers
   for (int i = 3; i <= n; i++) {
     next = first + second;
     printf(" %d", next);
