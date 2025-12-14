@@ -1,7 +1,7 @@
 // Format file: clang-format -i yourfile.c
 /*
 Bài 6: Viết chương trình nhập vào một số nguyên không âm 𝑁! (𝑁 > 0). Tính và in
-ra 𝑁! • Quy ước: 0! = 1.
+ra 𝑁! • Quy ước: 0! = 1
 */
 
 #include <stdio.h>
