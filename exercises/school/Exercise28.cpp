@@ -28,7 +28,7 @@ int main() {
     n = n / 10;
   }
 
-  printf("So dao nguoc cua %d la: %d\n", temp, reversed);
+  //printf("So dao nguoc cua %d la: %d\n", temp, reversed);
 
   // Check so doi xung
   if (temp == reversed) {
