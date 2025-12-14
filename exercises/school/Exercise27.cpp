@@ -2,6 +2,11 @@
 /*
 Bài 27: Viết chương trình nhập vào một số nguyên dương 𝑁 (𝑁 > 2). In ra 𝑁 số đầu
 tiên trong dãy Fibonacci. Dãy Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13
+
+0 + 1 = 1
+1 + 1 = 2
+1 + 2 = 3
+2 + 3 = 5
 */
 
 #include <stdio.h>
