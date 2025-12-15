@@ -37,7 +37,7 @@ int main() {
   while (money - 1000 >= 0) {
     money = money - 1000;
     count_1000++;
-  }
+  
   printf("Tien 5000: %d\n", count_5000);
   printf("Tien 2000: %d\n", count_2000);
   printf("Tien 1000: %d\n", count_1000);
