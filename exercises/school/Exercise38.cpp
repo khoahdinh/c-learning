@@ -13,7 +13,7 @@ int main() {
   // Input: money
   int money;
 
-  printf("Nhap so tien can doi: ");
+  printf("Nhap so tien can doi (VND): ");
   scanf("%d", &money);
 
   // Check money
