@@ -17,30 +17,31 @@ int main() {
   scanf("%d", &money);
 
   // Check money
-  if (money < 1000) {
+  if (money < 1000 || money % 1000 != 0) {
     printf("Nhap sai so tien");
     return 0;
   }
 
-  int count_5000 = 0, count_2000 = 0, count_1000 = 0;
+  int count5000 = 0, count2000 = 0, count1000 = 0;
 
   while (money - 5000 >= 0) {
     money = money - 5000;
-    count_5000++;
+    count5000++;
   }
 
   while (money - 2000 >= 0) {
     money = money - 2000;
-    count_2000++;
+    count2000++;
   }
 
   while (money - 1000 >= 0) {
     money = money - 1000;
-    count_1000++;
-  
-  printf("Tien 5000: %d\n", count_5000);
-  printf("Tien 2000: %d\n", count_2000);
-  printf("Tien 1000: %d\n", count_1000);
+    count1000++;
+  }
+
+  printf("Tien 5000: %d to\n", count5000);
+  printf("Tien 2000: %d to\n", count2000);
+  printf("Tien 1000: %d to\n", count1000);
 
   return 0;
 }
