@@ -25,6 +25,7 @@ int main(){
 
     // Calculate the area of a rectangle
     area = length*width;
+    
     // Print the variables
     printf("Length is: %d\n", length);
     printf("Width is: %d\n", width);
