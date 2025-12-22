@@ -1,5 +1,6 @@
 // Format file: clang-format -i yourfile.c
 /*
+
 Bài 1: Viết chương trình nhập vào chiều dài và chiều rộng của một hình chữ nhật
 (kiểu số thực). Tính toán và in ra màn hình chu vi và diện tích của hình chữ
 nhật đó.
