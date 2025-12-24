@@ -182,7 +182,7 @@ int getNthFibonacci(int n) {
 // 26. getDaysInMonth(int month, int year): Trả về số ngày trong month của năm
 // year (sử dụng isLeapYear).
 
-int getDaysInMonth(int month, int year) {
+int getDaysInMonth(const int month, const int year) {
 
   switch (month) {
   case 1:
