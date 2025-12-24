@@ -184,6 +184,11 @@ int getNthFibonacci(int n) {
 
 int getDaysInMonth(const int month, const int year) {
 
+  // Check case year = 0
+  if (year == 0) {
+    return 0;
+  }
+
   switch (month) {
   case 1:
   case 3:
