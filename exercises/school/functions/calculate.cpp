@@ -2,6 +2,8 @@
 #include <math.h>
 #include <stdio.h>
 
+#include "check.cpp"
+
 // 13. getMax(int a, int b): Trả về số lớn nhất trong hai số a, b.
 
 int getMax(int a, int b) { return (a > b) ? a : b; }
@@ -166,7 +168,7 @@ int getNthFibonacci(int n) {
   int first = 0;
   int second = 1;
 
-  int next;
+  int next = 0; // Nên gắn giá trị vì debug ra số bự
 
   for (int i = 3; i <= n; i++) {
     next = first + second;
@@ -179,6 +181,33 @@ int getNthFibonacci(int n) {
 
 // 26. getDaysInMonth(int month, int year): Trả về số ngày trong month của năm
 // year (sử dụng isLeapYear).
+
+int getDaysInMonth(int month, int year) {
+
+  switch (month) {
+  case 1:
+  case 3:
+  case 5:
+  case 7:
+  case 8:
+  case 10:
+  case 12:
+    return 31;
+
+  case 4:
+  case 6:
+  case 9:
+  case 11:
+    return 30;
+
+  case 2:
+    return (isLeapYear(year)) ? 29 : 28;
+
+  default:
+    return 0;
+  }
+}
+
 // 27. calculateRectangleArea(float length, float width): Trả về diện tích hình
 // chữ nhật.
 // 28. calculateTriangleArea(float a, float b, float c): Trả về diện tích tam
