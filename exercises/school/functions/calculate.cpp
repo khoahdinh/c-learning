@@ -144,7 +144,7 @@ int getFirstDigit(int n) {
     return 0;
   }
 
-  int digit;
+  int digit = 0;
 
   while (n != 0) {
     digit = n % 10;
@@ -171,7 +171,9 @@ int getNthFibonacci(int n) {
   int first = 0;
   int second = 1;
 
-  int next = 0; // Nên gắn giá trị vì debug ra số bự
+  /*Nên gán giá trị vì debug biến next sẽ nhận 1 số ngẫu nhiên mặc dù không ảnh
+    đến chương trình nhưng nó khó chịu*/
+  int next = 0; 
 
   for (int i = 3; i <= n; i++) {
     next = first + second;
