@@ -1,4 +1,3 @@
-#include <limits.h>
 #include <math.h>
 #include <stdio.h>
 
@@ -53,16 +52,17 @@ void getRoots(float a, float b, float c, float &x1, float &x2, int &numRoots) {
   // Case a = 0
   if (a == 0) {
     if (b == 0 && c == 0) {
-      numRoots = INT_MAX;
+      numRoots = -1; // vô số nghiệm
     } else if (b == 0) {
-      numRoots = 0;
+      numRoots = 0; // vô nghiệm
     } else {
       x1 = x2 = (-c) / b;
-      numRoots = 1;
+      numRoots = 1; // 1 nghiệm
     }
+    return;
   }
 
-  // Find delta
+  // case: Phương trình bậc 2
   double delta = (b * b) - (4 * a * c);
 
   // Solve ...
@@ -82,7 +82,7 @@ void getRoots(float a, float b, float c, float &x1, float &x2, int &numRoots) {
 // số giây (totalSeconds) thành số giờ (h), số phút (m) và số giây (s).
 
 void decomposeTime(int totalSeconds, int &h, int &m, int &s) {
-  h = (float)totalSeconds / 3600;
+  h = totalSeconds / 3600;
   m = (totalSeconds % 3600) / 60;
   s = (totalSeconds - (h * 3600) - (m * 60));
 }
