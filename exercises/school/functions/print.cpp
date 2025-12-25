@@ -167,7 +167,7 @@ void analyzeNumber(int n) {
 
 void printDayOfWeek(int day, int month, int year) {
 
-  if (day < 1 || day > 31 || month < 1 || month > 12 || year == 0) {
+  if (day < 1 || day > 31 || month < 1 || month > 12 || year <= 0) {
     printf("Invalid input\n");
     return;
   }
