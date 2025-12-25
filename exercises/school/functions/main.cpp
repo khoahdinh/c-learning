@@ -81,7 +81,7 @@ int main() {
   // analyzeNumber(12);
   // printDayOfWeek(25,12,2025);
 
-  // ===== Nhóm hàm thủ tục =====
+  // ===== Nhóm hàm tham số, con trỏ =====
   printf("\nHAM VOI THAM SO CON TRO:\n");
 
   // Swap a và b - int
