@@ -280,23 +280,20 @@ float calculateTaxiFare(float km) {
 
 // 33. calculateSeriesSum(int n): Trả về tổng S = 1 + 1/2 + 1/3 + ... + 1/N.
 
-float calculateSeriesSum(int n){
-  if (n < 0)
-  {
+float calculateSeriesSum(int n) {
+  if (n < 0) {
     return 0;
   }
 
-  if (n == 1)
-  {
+  if (n == 1) {
     return 1;
   }
-  
+
   float sum = 1;
-  
-  for (int i = 2; i <= n; i++)
-  {
-    sum = sum + (float) (1/i);
+
+  for (int i = 2; i <= n; i++) {
+    sum = sum + (float)1 / i;
   }
-  
+
   return sum;
 }
