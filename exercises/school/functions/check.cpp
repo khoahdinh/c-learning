@@ -1,6 +1,13 @@
+/*
+    File: check.cpp
+    Mô tả:
+    - Cài đặt (định nghĩa) các hàm kiểm tra đã khai báo trong check.h
+*/
 #include <cctype>
 #include <math.h>
 #include <stdio.h>
+
+#include "check.h"
 
 // 1. isEven(int n): Kiểm tra n có phải là số chẵn không.
 
