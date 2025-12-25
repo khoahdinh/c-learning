@@ -2,7 +2,8 @@
 #include <math.h>
 #include <stdio.h>
 
-#include "check.cpp"
+#include "calculate.h"
+#include "check.h"
 
 #define PI 3.141592653589793
 
@@ -46,7 +47,7 @@ int calculateSum(int n) {
   return (n * (n + 1)) / 2;
 }
 
-/*8. getGCD(int a, int b): Trả về Ước chung lớn nhất (UCLN) của a và b bằng
+/* 18. getGCD(int a, int b): Trả về Ước chung lớn nhất (UCLN) của a và b bằng
 thuật toán Euclid.*/
 
 int getGCD(int a, int b) {
