@@ -32,16 +32,19 @@ bool isPerfectNumber(int n);
 // 7. Kiểm tra năm nhuận
 bool isLeapYear(int year);
 
-// 8. Kiểm tra chia hết
+// 8. Kiểm tra số đối xứng
+bool isPalindrome(int n);
+
+// 9. Kiểm tra chia hết
 bool isDivisible(int number, int divisor);
 
-// 9. Kiểm tra tam giác hợp lệ
+// 10. Kiểm tra tam giác hợp lệ
 bool isValidTriangle(float a, float b, float c);
 
-// 10. Kiểm tra nguyên âm
+// 11. Kiểm tra nguyên âm
 bool isVowel(char c);
 
-// 11. Kiểm tra chữ số
+// 12. Kiểm tra chữ số
 bool isDigit(char c);
 
 #endif
