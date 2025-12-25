@@ -4,6 +4,8 @@
 
 #include "check.cpp"
 
+#define PI 3.141592653589793
+
 // 13. getMax(int a, int b): Trả về số lớn nhất trong hai số a, b.
 
 int getMax(int a, int b) { return (a > b) ? a : b; }
@@ -213,13 +215,87 @@ int getDaysInMonth(const int month, const int year) {
   }
 }
 
-// 27. calculateRectangleArea(float length, float width): Trả về diện tích hình
-// chữ nhật.
-// 28. calculateTriangleArea(float a, float b, float c): Trả về diện tích tam
-// giác theo công thức Heron (sau khi đã kiểm tra isValidTriangle).
+/* 27. calculateRectangleArea(float length, float width): Trả về diện tích hình
+ chữ nhật. */
+
+float calculateRectangleArea(float length, float width) {
+
+  if (length <= 0 || width <= 0) {
+    return 0;
+  }
+
+  return length * width;
+}
+
+/* 28. calculateTriangleArea(float a, float b, float c): Trả về diện tích tam
+giác theo công thức Heron (sau khi đã kiểm tra isValidTriangle). */
+
+float calculateTriangleArea(float a, float b, float c) {
+
+  if (isValidTriangle(a, b, c)) {
+    float p = (a + b + c) / 2;
+    return sqrt(p * (p - a) * (p - b) * (p - c));
+  } else {
+    return 0;
+  }
+}
+
 // 29. calculateCirclePerimeter(float radius): Trả về chu vi hình tròn.
-// 30. convertCtoF(float celsius): Trả về nhiệt độ F tương ứng từ độ C.31.
-// convertFtoC(float fahrenheit): Trả về nhiệt độ C tương ứng từ độ F.
-// 32. calculateTaxiFare(float km): Trả về tiền cước taxi dựa trên số km (tự
-// định nghĩa 3 mức giá).
+
+float calculateCirclePerimeter(float radius) {
+
+  if (radius < 0) {
+    return 0;
+  }
+
+  return 2 * PI * radius;
+}
+
+// 30. convertCtoF(float celsius): Trả về nhiệt độ F tương ứng từ độ C.
+
+float convertCtoF(float celsius) { return celsius * 1.8 + 32; }
+
+// 31. convertFtoC(float fahrenheit): Trả về nhiệt độ C tương ứng từ độ F.
+
+float convertFtoC(float fahrenheit) { return (fahrenheit - 32) / 1.8; }
+
+/* 32. calculateTaxiFare(float km): Trả về tiền cước taxi dựa trên số km (tự
+định nghĩa 3 mức giá). */
+
+float calculateTaxiFare(float km) {
+
+  if (km < 0) {
+    return 0;
+  }
+
+  if (km <= 1) {
+    return km * 15000;
+  } else if (km <= 5) {
+    return 15000 + (km - 1) * 13500;
+  } else {
+    return 15000 + 4 * 13500 + (km - 5) * 10000;
+  }
+}
+
 // 33. calculateSeriesSum(int n): Trả về tổng S = 1 + 1/2 + 1/3 + ... + 1/N.
+
+float calculateSeriesSum(int n){
+  if (n < 0)
+  {
+    return 0;
+  }
+
+  if (n == 1)
+  {
+    return 1;
+  }
+  
+  float sum = 1;
+  
+  for (int i = 2; i <= n; i++)
+  {
+    sum = sum + (float) (1/i);
+  }
+  
+  return sum;
+}
