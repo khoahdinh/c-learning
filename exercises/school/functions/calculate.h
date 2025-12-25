@@ -1,6 +1,17 @@
 #ifndef CALCULATE_H
 #define CALCULATE_H
 
+/*
+    File: calculate.h
+    Mô tả:
+    - Chứa khai báo (prototype) các hàm TÍNH TOÁN.
+    - Các hàm này có giá trị trả về (int, float, ...).
+    - Không in ra màn hình, chỉ xử lý và trả kết quả.
+    - Được sử dụng chung cho nhiều file khác (main.cpp, ...).
+    - File calculate.cpp sẽ include calculate.h để CÀI ĐẶT hàm.
+    - Các file khác (ví dụ main.cpp) chỉ cần include calculate.h để sử dụng hàm.
+*/
+
 // 13. Max – Min
 int getMax(int a, int b);
 int getMin(int a, int b);
