@@ -76,11 +76,30 @@ bool isLeapYear(int year) {
   return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
 }
 
-/* 8. isDivisible(int number, int divisor): Kiểm tra number có chia hết cho
+// 8. isPalindrome(int n): Kiểm tra số nguyên n có phải là số đối xứng không.
+
+bool isPalindrome(int n) {
+
+  if (n < 0) {
+    return false;
+  }
+
+  int temp = n;
+  int reverse = 0;
+  
+  while (n != 0) {
+    reverse = reverse * 10 + (n % 10);
+    n = n / 10;
+  }
+
+  return temp == reverse;
+}
+
+/* 9. isDivisible(int number, int divisor): Kiểm tra number có chia hết cho
 divisor không.*/
 
 bool isDivisible(int number, int divisor) {
-    
+
   if (divisor == 0) {
     return 0;
   }
@@ -88,18 +107,15 @@ bool isDivisible(int number, int divisor) {
   return number % divisor == 0;
 }
 
-/* 9. isValidTriangle(float a, float b, float c): Kiểm tra xem 3 cạnh a, b, c có
-thể tạo thành một tam giác hợp lệ không.*/
+/* 10. isValidTriangle(float a, float b, float c): Kiểm tra xem 3 cạnh a, b, c
+có thể tạo thành một tam giác hợp lệ không.*/
 
 bool isValidTriangle(float a, float b, float c) {
 
-  return a > 0 && b > 0 && c > 0 && 
-        a + b > c && 
-        a + c > b && 
-        b + c > a;
+  return a > 0 && b > 0 && c > 0 && a + b > c && a + c > b && b + c > a;
 }
 
-/* 10. isVowel(char c): Kiểm tra ký tự c có phải là một nguyên âm (a, e, i, o,
+/* 11. isVowel(char c): Kiểm tra ký tự c có phải là một nguyên âm (a, e, i, o,
 u) hay không.*/
 
 bool isVowel(char c) {
@@ -108,6 +124,6 @@ bool isVowel(char c) {
   return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
 
-// 11. isDigit(char c): Kiểm tra ký tự c có phải là một chữ số (0-9) hay không.
+// 12. isDigit(char c): Kiểm tra ký tự c có phải là một chữ số (0-9) hay không.
 
 bool isDigit(char c) { return c >= '0' && c <= '9'; }
