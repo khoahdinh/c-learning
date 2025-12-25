@@ -1,98 +1,94 @@
-# 📘 Bài tập Function – C/C++
+# Function Practice Project (C/C++)
 
-## 📂 Cấu trúc file
-
-### 1️⃣ main.cpp
-
-- **Chức năng**:
-  - File chạy chính của chương trình.
-  - Dùng để **test tất cả các hàm** đã viết trong các nhóm.
-- **Include**:
-  - `check.h` → dùng các hàm kiểm tra.
-  - `calculate.h` → dùng các hàm tính toán.
-  - `modify.h` → dùng các hàm thay đổi giá trị (truyền tham chiếu).
-- **Lý do**:
-  - `main.cpp` **KHÔNG viết logic hàm**, chỉ gọi hàm để kiểm tra kết quả.
+This project contains a set of basic function exercises, organized into logical groups and separated into multiple source and header files for clarity and reusability.
 
 ---
 
-### 2️⃣ check.h
+## 📁 File Structure & Purpose
 
-- **Chức năng**:
-  - Chứa **khai báo (prototype)** các hàm kiểm tra.
-  - Các hàm trả về kiểu `bool`.
-- **Vai trò**:
-  - Giúp các file khác (main.cpp, check.cpp, …) biết hàm tồn tại.
-- **Bắt buộc**:
-  - `check.cpp` và `main.cpp` **phải include `check.h`**.
+### `main.cpp`
 
----
-
-### 3️⃣ check.cpp
-
-- **Chức năng**:
-  - Chứa **cài đặt (định nghĩa)** các hàm kiểm tra.
-- **Nhóm hàm**:
-  - isEven, isOdd, isPrime
-  - isPerfectNumber, isPalindrome
-  - isLeapYear, isVowel, isDigit, …
-- **Lưu ý**:
-  - Không có `main()`.
-  - Phải include `"check.h"`.
+- Entry point of the program.
+- Used to **test and run all functions**.
+- Includes header files:
+  - `check.h`
+  - `calculate.h`
+  - `modify.h`
+- Calls functions and prints results to the console.
 
 ---
 
-### 4️⃣ calculate.h
+### `check.h`
 
-- **Chức năng**:
-  - Khai báo các **hàm tính toán** (trả về số).
-- **Ví dụ hàm**:
-  - calculateSumDigits
-  - calculateFactorial
-  - calculateSeriesSum, …
-- **Vai trò**:
-  - Cho phép `main.cpp` và `calculate.cpp` dùng chung prototype.
+- Declares **checking/validation functions** (`bool` return type).
+- Examples:
+  - `isPrime`, `isEven`, `isPalindrome`, `isLeapYear`, ...
+- Must be included in:
+  - `check.cpp`
+  - Any file that uses these functions (e.g. `main.cpp`, `calculate.cpp`).
 
 ---
 
-### 5️⃣ calculate.cpp
+### `check.cpp`
 
-- **Chức năng**:
-  - Cài đặt các hàm tính toán đã khai báo trong `calculate.h`.
-- **Lưu ý**:
-  - Phải include `"calculate.h"`.
-  - Không chứa `main()`.
-
----
-
-### 6️⃣ modify.h
-
-- **Chức năng**:
-  - Khai báo các **hàm dùng tham chiếu (reference)**.
-- **Nhóm hàm**:
-  - swapInt, swapFloat
-  - increment
-  - orderTwo, sortThree
-  - getRoots, decomposeTime
+- Implements all functions declared in `check.h`.
+- Contains logic for:
+  - Number checking
+  - Character checking
+  - Date checking
+- Includes `check.h`.
 
 ---
 
-### 7️⃣ modify.cpp
+### `calculate.h`
 
-- **Chức năng**:
-  - Cài đặt các hàm thay đổi giá trị biến thông qua tham chiếu.
-- **Lưu ý**:
-  - Phải include `"modify.h"`.
-  - Không có `main()`.
+- Declares **calculation functions**.
+- Examples:
+  - Series sum
+  - Digit sum
+  - Mathematical formulas
+- Used by `main.cpp` and implemented in `calculate.cpp`.
 
 ---
 
-## ▶️ Cách biên dịch & chạy chương trình
+### `calculate.cpp`
 
-### Cách 1 (khuyên dùng)
+- Implements functions declared in `calculate.h`.
+- Focuses on **returning computed values**, not printing.
+
+---
+
+### `modify.h`
+
+- Declares functions that **modify variables via reference**.
+- Examples:
+  - `swapInt`, `orderTwo`, `sortThree`
+  - Solving quadratic equations
+  - Time decomposition
+
+---
+
+### `modify.cpp`
+
+- Implements all functions declared in `modify.h`.
+- Uses **reference parameters** to change input values directly.
+
+---
+
+## ▶️ How to Compile & Run
+
+Compile all `.cpp` files together:
 
 ```bash
 g++ main.cpp check.cpp calculate.cpp modify.cpp -o main
-./main
-
 ```
+
+## 📝 Notes
+
+- Each .cpp file must include its corresponding .h file.
+
+- main.cpp only includes header files, never .cpp files.
+
+- All functions are grouped by purpose for easy maintenance and learning
+
+Merry christmas 2025
