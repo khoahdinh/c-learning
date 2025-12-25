@@ -91,4 +91,4 @@ g++ main.cpp check.cpp calculate.cpp modify.cpp -o main
 
 - All functions are grouped by purpose for easy maintenance and learning
 
-Merry christmas 2025
+Merry christmas 2025!
