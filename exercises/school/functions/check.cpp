@@ -75,7 +75,7 @@ bool isLeapYear(int year) {
   return (year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0));
 }
 
-/* 9. isDivisible(int number, int divisor): Kiểm tra number có chia hết cho
+/* 8. isDivisible(int number, int divisor): Kiểm tra number có chia hết cho
 divisor không.*/
 
 bool isDivisible(int number, int divisor) {
@@ -87,7 +87,7 @@ bool isDivisible(int number, int divisor) {
   return number % divisor == 0;
 }
 
-/*10. isValidTriangle(float a, float b, float c): Kiểm tra xem 3 cạnh a, b, c có
+/* 9. isValidTriangle(float a, float b, float c): Kiểm tra xem 3 cạnh a, b, c có
 thể tạo thành một tam giác hợp lệ không.*/
 
 bool isValidTriangle(float a, float b, float c) {
@@ -98,7 +98,7 @@ bool isValidTriangle(float a, float b, float c) {
         b + c > a;
 }
 
-/* 11. isVowel(char c): Kiểm tra ký tự c có phải là một nguyên âm (a, e, i, o,
+/* 10. isVowel(char c): Kiểm tra ký tự c có phải là một nguyên âm (a, e, i, o,
 u) hay không.*/
 
 bool isVowel(char c) {
@@ -107,6 +107,6 @@ bool isVowel(char c) {
   return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
 
-// 12. isDigit(char c): Kiểm tra ký tự c có phải là một chữ số (0-9) hay không.
+// 11. isDigit(char c): Kiểm tra ký tự c có phải là một chữ số (0-9) hay không.
 
 bool isDigit(char c) { return c >= '0' && c <= '9'; }
