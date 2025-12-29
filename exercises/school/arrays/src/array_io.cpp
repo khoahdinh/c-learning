@@ -58,7 +58,7 @@ float tinhTrungBinhCong(int a[], int n) {
   if (n == 0) {
     return 0;
   }
-  return (float)tinhTongMang(a, n) / (n - 1);
+  return (float)tinhTongMang(a, n) / n;
 }
 
 // 7. Tính tổng các phần tử chẵn trong mảng
@@ -77,7 +77,7 @@ int tinhTongPhanTuChan(int a[], int n) {
 int tinhTongPhanTuLeViTriLe(int a[], int n) {
 
   int tongLe = 0;
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i <= n; i++) {
     if (i % 2 != 0 && a[i] % 2 != 0) {
       tongLe += a[i];
     }
