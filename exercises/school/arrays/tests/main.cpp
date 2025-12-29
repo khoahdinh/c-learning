@@ -16,22 +16,44 @@ Bước 3: Chạy chương trình:
 #include <stdio.h>
 
 #include "../include/array_io.h"
+#include "../include/array_search.h"
 
-int main()
-{
-    int a[100], n;
+int main() {
+  int a[100], n;
 
-    printf("Nhap so phan tu: ");
-    scanf("%d", &n);
+  printf("Nhap so phan tu: ");
+  scanf("%d", &n);
 
-    if (n <= 0 || n > 100) {
-        printf("So phan tu khong hop le!\n");
-        return 0;
-    }
-
-    phatSinhMangNgauNhien(a,n);
-    // nhapMang(a, n);
-    xuatMang(a, n);
-
+  if (n <= 0 || n > 100) {
+    printf("So phan tu khong hop le!\n");
     return 0;
+  }
+
+//   Nhóm 1: Nhập, Xuất và Tính toán cơ bản
+
+//   phatSinhMangNgauNhien(a, n);
+  nhapMang(a, n);
+  xuatMang(a, n);
+
+//   int tongMang = tinhTongMang(a, n);
+//   printf("Tong = %d\n", tongMang);
+
+//   long long tichMang = tinhTichMang(a, n);
+//   printf("Tich = %d\n", tichMang);
+
+//   float trungBinhCong = tinhTrungBinhCong(a, n);
+//   printf("Trung binh cong = %.2f\n", trungBinhCong);
+
+//   int tongChan = tinhTongPhanTuChan(a, n);
+//   printf("Tong chan = %d\n", tongChan);
+
+//   int tongLeViTriLe = tinhTongPhanTuLeViTriLe(a, n);
+//   printf("Tong le cua phan tu vi tri le = %d\n", tongLeViTriLe);
+
+// Nhóm 2: Tìm kiếm Giá trị và Vị trí
+
+    int phanTuAmLonNhat = timPhanTuAmLonNhat(a,n);
+    printf("Phan tu am lon nhat = %d\n", phanTuAmLonNhat);
+
+  return 0;
 }
