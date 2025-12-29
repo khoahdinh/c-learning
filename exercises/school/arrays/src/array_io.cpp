@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "../include/array_io.h" 
+#include "../include/array_io.h"
 
 // 1. Nhập các phần tử cho mảng
 void nhapMang(int a[], int n) {
@@ -26,8 +26,8 @@ void xuatMang(int a[], int n) {
 // 3. Phát sinh các phần tử ngẫu nhiên cho mảng
 void phatSinhMangNgauNhien(int a[], int n) {
 
+  srand(time(NULL));
   for (int i = 0; i < n; i++) {
-    srand(time(NULL));
     a[i] = rand() % 100; // 0 -> 99
   }
 }
