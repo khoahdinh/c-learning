@@ -1,5 +1,5 @@
-#ifndef ARRAY_COUNT
-#define ARRAY_COUNT
+#ifndef ARRAY_COUNT_H
+#define ARRAY_COUNT_H
 
 // ================================
 // Nhóm 3: Đếm và Kiểm tra
