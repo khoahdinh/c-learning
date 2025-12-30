@@ -6,7 +6,7 @@ Bước 1: Mở terminal và đứng tại thư mục:
 D:\Code_C\exercises\school\arrays>
 
 Bước 2: Compile chương trình:
-g++ src/array_io.cpp tests/main.cpp -o test
+g++ src/array_io.cpp src/array_search.cpp tests/main.cpp -o test
 
 Bước 3: Chạy chương trình:
 .\test
@@ -52,8 +52,24 @@ int main() {
 
 // Nhóm 2: Tìm kiếm Giá trị và Vị trí
 
-    int phanTuAmLonNhat = timPhanTuAmLonNhat(a,n);
-    printf("Phan tu am lon nhat = %d\n", phanTuAmLonNhat);
+    // int phanTuAmLonNhat = timPhanTuAmLonNhat(a,n);
+    // printf("Phan tu am lon nhat = %d\n", phanTuAmLonNhat);
+
+    // int phanTuDuongNhoNhat = timPhanTuDuongNhoNhat(a,n);
+    // printf("Phan tu duong nho nhat = %d\n", phanTuDuongNhoNhat);
+
+    // int viTriXDauTien = timViTriDauTien(a,n,5);
+    // printf("Vi tri dau tien cua X trong mang: = %d\n", viTriXDauTien);
+
+    // int viTriXCuoiCung = timViTriCuoiCung(a,n,10);
+    // printf("Vi tri cuoi cung cua X trong mang: = %d\n", viTriXCuoiCung);
+
+    // int soChanDauTien = timSoChanDauTien(a,n);
+    // printf("So chan dau tien trong mang: = %d\n", soChanDauTien);
+
+    // int soLeCuoiCung = timSoLeCuoiCung(a,n);
+    // printf("So le cuoi cung trong mang: = %d\n", soLeCuoiCung);
+
 
   return 0;
 }
