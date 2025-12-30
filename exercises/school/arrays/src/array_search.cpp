@@ -69,47 +69,63 @@ int timPhanTuAmLonNhat(int a[], int n) {
 // 14. Viết hàm tìm phần tử dương nhỏ nhất. Nếu không có, trả về 0.
 int timPhanTuDuongNhoNhat(int a[], int n) {
 
-  int minPhanTuDuong = a[0];
+  int minDuong = INT_MAX;
+  // INT_MAX: giá trị lớn nhất có thể của kiểu int. Phải #include <limits.h>
+  // Dùng làm giá trị khởi tạo để đảm bảo mọi số dương trong mảng đều bé hơn nó
+
   for (int i = 0; i < n; i++) {
-    if (a[i] > 0 && a[i] <= minPhanTuDuong) {
-      minPhanTuDuong = a[i];
-    } else {
-      return 0;
+    if (a[i] > 0 && a[i] < minDuong) {
+      minDuong = a[i];
     }
   }
-  return minPhanTuDuong;
+  return (minDuong == INT_MAX) ? 0 : minDuong;
 }
 
 // 15. Viết hàm tìm vị trí xuất hiện đầu tiên của phần tử 𝑥. Trả về -1 nếu không
 // tìm thấy.
+
 int timViTriDauTien(int a[], int n, int x) {
 
-  //   for (int i = 0; i < n; i++) {
-  //     if (a[i] == x) {
-  //       return i;
-  //     } else {
-  //       return -1;
-  //     }
-  //   }
-  return 0;
+  for (int i = 0; i < n; i++) {
+    if (a[i] == x) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 // 16. Viết hàm tìm vị trí xuất hiện cuối cùng của phần tử 𝑥. Trả về -1 nếu
 // không tìm thấy.
 int timViTriCuoiCung(int a[], int n, int x) {
 
-  //   for (int i = n - 1; i >= 0; i--) {
-  //     if (a[i] == x) {
-  //       return i;
-  //     } else {
-  //       return -1;
-  //     }
-  //   }
-  return 0;
+  for (int i = n - 1; i >= 0; i--) {
+    if (a[i] == x) {
+      return i;
+    }
+  }
+  return -1;
 }
 
 // 17. Viết hàm tìm giá trị chẵn đầu tiên trong mảng.
-int timSoChanDauTien(int a[], int n) { return 0; }
+int timSoChanDauTien(int a[], int n) {
+
+  for (int i = 0; i < n; i++) {
+    if (a[i] % 2 == 0) {
+      return a[i];
+    }
+  }
+
+  return 0;
+}
 
 // 18. Viết hàm tìm giá trị lẻ cuối cùng trong mảng.
-int timSoLeCuoiCung(int a[], int n) { return 0; }
+int timSoLeCuoiCung(int a[], int n) {
+
+  for (int i = n - 1; i >= 0; i--) {
+    if (a[i] % 2 != 0) {
+      return a[i];
+    }
+  }
+
+  return 0;
+}
