@@ -7,7 +7,7 @@
 // ================================
 
 // 19. Viết hàm đếm số lượng số nguyên tố trong mảng.
- int demSoNguyenTo(int a[], int n);
+int demSoNguyenTo(int a[], int n);
 
 // 20. Viết hàm đếm số lượng số hoàn thiện trong mảng.
 int demSoHoanThien(int a[], int n);
