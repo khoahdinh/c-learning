@@ -1,5 +1,5 @@
-#ifndef ARRAY_SEARCH
-#define ARRAY_SEARCH
+#ifndef ARRAY_SEARCH_H
+#define ARRAY_SEARCH_H
 
 // ================================
 // Nhóm 2: Tìm kiếm Giá trị và Vị trí
