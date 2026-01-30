@@ -91,6 +91,7 @@ void xoaPhanTuViTriK(int a[], int &n, int k){
 //     }
 //   }
 
+//   Copy mảng
 //   for (int i = 0; i < soLuongPhanTu; i++)
 //   {
 //     a[i] = temp[i];
