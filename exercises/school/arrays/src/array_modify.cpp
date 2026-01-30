@@ -40,7 +40,9 @@ void themPhanTuViTriK(int a[], int &n, int x, int k) {
 }
 
 // 28. Viết hàm xóa phần tử cuối mảng.
-void xoaPhanTuCuoi(int a[], int &n) { n--; }
+void xoaPhanTuCuoi(int a[], int &n) {
+  n--; // Giảm số phần tử, phần tử cuối tự động "biến mất"
+}
 
 // 29. Viết hàm xóa phần tử đầu mảng.
 void xoaPhanTuDau(int a[], int &n) {
@@ -68,6 +70,8 @@ void xoaPhanTuViTriK(int a[], int &n, int k) {
 }
 
 // 31.Viết hàm xóa tất cả các phần tử có giá trị bằng 𝑥 trong mảng.
+
+// Cách 1: Dùng mảng tạm (đơn giản nhưng tốn bộ nhớ)
 // void xoaTatCaPhanTuX(int a[], int &n, int x){
 
 //   int temp[100];
@@ -93,6 +97,7 @@ void xoaPhanTuViTriK(int a[], int &n, int k) {
 
 // }
 
+// Cách 2: Ghi đè trực tiếp (tối ưu hơn)
 void xoaTatCaPhanTuX(int a[], int &n, int x) {
 
   int viTriGhi = 0;
