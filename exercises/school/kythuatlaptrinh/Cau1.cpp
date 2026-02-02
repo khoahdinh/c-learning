@@ -4,6 +4,7 @@
 #include <stdio.h>
 
 // a) Nhập mảng một chiều các số nguyên gồm n phần tử (0<n<=20)
+
 void nhapMang(int a[], int n) {
 
   for (int i = 0; i < n; i++) {
@@ -84,6 +85,7 @@ int demSoNguyento(int a[], int n) {
 }
 
 // e) Tính tổng các phần tử chẳn trong mảng.
+
 int tongChan(int a[], int n) {
 
   int tong = 0;
@@ -98,6 +100,7 @@ int tongChan(int a[], int n) {
 
 // f) Tìm vị trí phần tử dương cuối cùng. Xuất vị trí và giá trị của phần tử
 // dương cuối cùng nếu tìm thấy.
+
 void timViTriDuongCuoiCung(int a[], int n) {
 
   for (int i = n - 1; i >= 0; i--) {
@@ -109,6 +112,7 @@ void timViTriDuongCuoiCung(int a[], int n) {
 }
 
 // g) Tìm giá trị phần tử lớn nhất trong mảng.
+
 int timMax(int a[], int n) {
 
   int max = a[0];
@@ -119,6 +123,7 @@ int timMax(int a[], int n) {
   }
   return max;
 }
+
 // h) Xuất vị trí  phần tử lớn nhất trong mảng.
 
 int timViTriMax(int a[], int n) {
@@ -180,7 +185,9 @@ void xoaPhanTuViTriK(int a[], int &n, int k) {
   // Giảm số phần tử trong mảng đi một
   n--;
 }
-// l) Kiểm tra mảng có chứa số lẻ không.
+
+// l) Kiểm tra mảng có chứa số lẻ không
+
 bool kiemTraLe(int a[], int n) {
 
   for (int i = 0; i < n; i++) {
@@ -190,6 +197,7 @@ bool kiemTraLe(int a[], int n) {
   }
   return false;
 }
+
 // m) Sắp xếp mảng theo thứ tự tăng dần.
 
 void sapXepTangDan(int a[], int n) {
@@ -205,6 +213,7 @@ void sapXepTangDan(int a[], int n) {
   }
 }
 
+// Hàm chính
 int main() {
 
   const int MAX_SIZE = 20;
