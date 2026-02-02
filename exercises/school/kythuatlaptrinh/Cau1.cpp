@@ -37,7 +37,12 @@ void xuatMangViTriChan(int a[], int n) {
 // c) Xuất ra màn hình các phần tử là số chính phương nằm tại những vị trí lẻ
 // trong mảng.
 
-bool laSoChinhPhuong(int x) { return (int)sqrt(x) * sqrt(x) == x; }
+bool laSoChinhPhuong(int x) {
+  if (x < 0)
+    return false;
+  int sqrtX = (int)sqrt(x);
+  return sqrtX * sqrtX == x;
+}
 
 void xuatSoChinhPhuongViTriLe(int a[], int n) {
 
@@ -136,7 +141,7 @@ float tinhTrungBinhCong(int a[], int n) {
     tong = tong + a[i];
     dem++;
   }
-  return tong / dem;
+  return (float)tong / dem;
 }
 
 // j) Thêm một phần tử k tại vị trí index vào trong mảng,
@@ -163,7 +168,7 @@ void themPhanTuViTriK(int a[], int &n, int k, int index) {
 
 void xoaPhanTuViTriK(int a[], int &n, int k) {
 
-  if (k < 1 || k > n - 1) {
+  if (k < 0 || k > n - 1) {
     printf("Vi tri xoa phan tu nam ngoai pham vi mang!\n");
     return;
   }
@@ -242,20 +247,20 @@ int main() {
   printf("Trung binh cong cac phan tu trong mang: %.2f\n", trungBinhCong);
 
   // Thêm một phần tử k tại vị trí index vào trong mảng
-    int k, index;
-    printf("Nhap gia tri k muon them vao mang: ");
-    scanf("%d", &k);
-    printf("Nhap vi tri (index) muon chen vao mang: ");
-    scanf("%d", &index);
-    themPhanTuViTriK(a, n, k, index);
-    xuatMang(a, n);
+  int k, index;
+  printf("Nhap gia tri k muon them vao mang: ");
+  scanf("%d", &k);
+  printf("Nhap vi tri (index) muon chen vao mang: ");
+  scanf("%d", &index);
+  themPhanTuViTriK(a, n, k, index);
+  xuatMang(a, n);
 
   // Xóa một phần tử tại vị trí k trong mảng, với 0<=k<=n-1
-    int kk;
-    printf("Nhap vi tri (k) muon xoa: ");
-    scanf("%d", &kk);
-    xoaPhanTuViTriK(a,n,kk);
-    xuatMang(a, n);
+  int kk;
+  printf("Nhap vi tri (k) muon xoa: ");
+  scanf("%d", &kk);
+  xoaPhanTuViTriK(a, n, kk);
+  xuatMang(a, n);
 
   // Kiểm tra mảng có số lẻ không??
   if (kiemTraLe(a, n)) {
