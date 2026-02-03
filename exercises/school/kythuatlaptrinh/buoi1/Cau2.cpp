@@ -11,11 +11,6 @@
 //   - Dấu [] đầu tiên: số dòng KHÔNG CẦN chỉ định (compiler không cần biết có
 //   bao nhiêu dòng)
 //   - [MAX_COL]: số cột BẮT BUỘC phải chỉ định
-//
-// Tại sao không cần số dòng?
-//   - Số dòng chỉ dùng để kiểm soát vòng lặp (i < d)
-//   - Compiler không cần biết "tổng cộng có bao nhiêu dòng" để tính địa chỉ
-//   - Chỉ cần biết "mỗi dòng dài bao nhiêu" (= MAX_COL)
 
 void nhapMaTran(int a[][MAX_COL], int d, int c) {
 
