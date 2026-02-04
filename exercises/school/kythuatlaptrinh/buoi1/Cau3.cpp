@@ -42,8 +42,7 @@ void nhapDanhSachSinhVien(struct SINHVIEN danhSachSinhVien[], int n) {
     scanf("%s", danhSachSinhVien[i].maSinhVien);
 
     // Xóa bộ đệm (buffer) trước khi nhập chuỗi có khoảng trắng
-    while (getchar() != '\n')
-      ;
+    while (getchar() != '\n');
 
     // Nhập họ tên
     printf("Nhap ho ten: ");
@@ -59,8 +58,7 @@ void nhapDanhSachSinhVien(struct SINHVIEN danhSachSinhVien[], int n) {
           &danhSachSinhVien[i].ngaySinh.nam);
 
     // Xóa buffer
-    while (getchar() != '\n')
-      ;
+    while (getchar() != '\n');
 
     // Nhập giới tính
     printf("Nhap gioi tinh (M/F): ");
