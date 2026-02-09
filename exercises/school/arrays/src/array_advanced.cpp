@@ -4,6 +4,7 @@
 
 // 38. Viết hàm xóa các phần tử bị trùng trong mảng, chỉ giữ lại phần tử xuất
 // hiện đầu tiên.
+
 void xoaPhanTuTrungNhau(int a[], int &n) {
 
   for (int i = 0; i < n - 1; i++) {
@@ -22,6 +23,7 @@ void xoaPhanTuTrungNhau(int a[], int &n) {
 
 // 39. Viết hàm liệt kê tần suất xuất hiện của các phần tử trong mảng. (Gợi ý:
 // Có thể dùng một mảng phụ để đánh dấu các phần tử đã đếm).
+
 void lietKeTanSuat(int a[], int n){
     
 }
