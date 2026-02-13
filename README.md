@@ -4,6 +4,7 @@
 ![Status](https://img.shields.io/badge/Status-Learning-green)
 ![Exercises](https://img.shields.io/badge/Exercises-140+-orange)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-lightgrey)
+![GitHub last commit](https://img.shields.io/github/last-commit/khoahdinh/c-Learning)
 
 This repository contains all my C programming exercises, organized by learning topics.
 
