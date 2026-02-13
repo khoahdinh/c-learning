@@ -75,8 +75,8 @@ void lietKeTanSuat(int a[], int n) {
 // 40.  Viết hàm trộn hai mảng 𝑎 và 𝑏 đã được sắp xếp tăng dần thành một mảng 𝑐
 // cũng được sắp xếp tăng dần.
 
-// Giống như xếp 2 chồng bài đã sắp sẵn thành 1 chồng: 
-// mỗi lần lấy lá bài trên cùng nhỏ hơn từ 1 trong 2 chồng."
+// Giống như xếp 2 chồng bài đã sắp sẵn thành 1 chồng:
+// mỗi lần lấy lá bài trên cùng nhỏ hơn từ 1 trong 2 chồng.
 
 void tronHaiMangDaSapXep(int a[], int n, int b[], int m, int c[], int &p) {
 
@@ -112,6 +112,52 @@ void tronHaiMangDaSapXep(int a[], int n, int b[], int m, int c[], int &p) {
 
 // 41. Viết hàm chèn cả mảng 𝑏 (gồm 𝑚 phần tử) vào mảng 𝑎 (gồm 𝑛 phần tử) tại vị
 // trí 𝑘.
-void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k){
-  
+
+// CÁCH 1: Dịch và chèn từng phần tử
+void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
+
+  // Kiểm tra vị trí hợp lệ
+  if (k < 0 || k > n) {
+    printf("Vi tri chen khong hop le!\n");
+    return;
+  }
+
+  // Mỗi vòng lặp: dịch 1 lần rồi chèn 1 phần tử
+  // → Tổng cộng dịch m lần
+  for (int j = 0; j < m; j++) {
+    for (int i = n; i > k; i--) {
+      a[i] = a[i - 1]; // Dịch phải
+    }
+
+    a[k] = b[j];
+    k++;
+    n++;
+  }
 }
+
+// CÁCH 2: Dịch 1 lần rồi copy toàn bộ
+void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
+
+  // Kiểm tra vị trí hợp lệ
+  if (k < 0 || k > n) {
+    printf("Vi tri chen khong hop le!\n");
+    return;
+  }
+
+  // Dịch các phần tử từ vị trí k về sau sang phải m vị trí
+  for (int i = n - 1; i >= k; i--) {
+    a[i + m] = a[i]; // Dịch phải
+  }
+
+  // Copy toàn bộ mảng b vào vị trí k
+  for (int j = 0; j < m; j++) {
+    a[k + j] = b[j];
+  }
+
+  // Tăng số phần tử
+  n += m;
+}
+
+// 42.  Viết hàm tìm đoạn con (liên tiếp) tăng dài nhất trong mảng. Hàm trả về
+// độ dài của đoạn con và lưu vị trí bắt đầu 𝑘.
+int timDoanConTangDaiNhat(int a[], int n, int &k) {}
