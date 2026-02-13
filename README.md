@@ -1,5 +1,9 @@
 # C Learning
 
+![C](https://img.shields.io/badge/Language-C-blue)
+![Learning](https://img.shields.io/badge/Status-Learning-green)
+![Progress](https://img.shields.io/badge/Progress-In%20Progress-yellow)
+
 This repository contains all my C programming exercises, organized by learning topics.
 
 I'll update this repository as I learn more ❤️
