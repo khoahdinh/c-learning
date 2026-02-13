@@ -13,9 +13,7 @@ I'll update this repository as I learn more ❤️
 
 # Problem-Solving Workflow / Quy trình giải bài toán
 
-## English Version
-
-### Steps to solve a programming problem:
+## Steps to solve a programming problem:
 
 1. **Read the problem carefully**
    - Understand what the problem is asking
@@ -44,9 +42,7 @@ I'll update this repository as I learn more ❤️
 
 ---
 
-## Phiên bản Tiếng Việt
-
-### Các bước giải bài toán lập trình:
+## Các bước giải bài toán lập trình:
 
 1. **Đọc kỹ đề bài**
    - Hiểu rõ bài toán yêu cầu gì
