@@ -114,26 +114,26 @@ void tronHaiMangDaSapXep(int a[], int n, int b[], int m, int c[], int &p) {
 // trí 𝑘.
 
 // CÁCH 1: Dịch và chèn từng phần tử
-void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
+// void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
 
-  // Kiểm tra vị trí hợp lệ
-  if (k < 0 || k > n) {
-    printf("Vi tri chen khong hop le!\n");
-    return;
-  }
+//   // Kiểm tra vị trí hợp lệ
+//   if (k < 0 || k > n) {
+//     printf("Vi tri chen khong hop le!\n");
+//     return;
+//   }
 
-  // Mỗi vòng lặp: dịch 1 lần rồi chèn 1 phần tử
-  // → Tổng cộng dịch m lần
-  for (int j = 0; j < m; j++) {
-    for (int i = n; i > k; i--) {
-      a[i] = a[i - 1]; // Dịch phải
-    }
+//   // Mỗi vòng lặp: dịch 1 lần rồi chèn 1 phần tử
+//   // → Tổng cộng dịch m lần
+//   for (int j = 0; j < m; j++) {
+//     for (int i = n; i > k; i--) {
+//       a[i] = a[i - 1]; // Dịch phải
+//     }
 
-    a[k] = b[j];
-    k++;
-    n++;
-  }
-}
+//     a[k] = b[j];
+//     k++;
+//     n++;
+//   }
+// }
 
 // CÁCH 2: Dịch 1 lần rồi copy toàn bộ
 void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
@@ -160,4 +160,40 @@ void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
 
 // 42.  Viết hàm tìm đoạn con (liên tiếp) tăng dài nhất trong mảng. Hàm trả về
 // độ dài của đoạn con và lưu vị trí bắt đầu 𝑘.
-int timDoanConTangDaiNhat(int a[], int n, int &k) {}
+int timDoanConTangDaiNhat(int a[], int n, int &k) {
+
+  int maxLength = 1;     // Độ dài đoạn con tăng dài nhất
+  int currentPos = 0;    // Vị trí bắt đầu đoạn dài nhất
+  int currentLength = 1; // Độ dài đoạn con tăng hiện tại
+
+  // Duyệt mảng từ phần tử thứ 2
+  for (int i = 1; i < n; i++) {
+
+    if (a[i] > a[i - 1]) {
+      // Nếu phần tử hiện tại > phần tử trước -> đoạn tăng tiếp tục
+      currentLength++;
+
+    } else {
+      // Gặp phần tử không tăng -> đoạn tăng bị đứt
+
+      // So sánh độ dài đoạn vừa kết thúc với đoạn dài nhất
+      if (currentLength >= maxLength) {
+        maxLength = currentLength;
+        currentPos = i - maxLength; // Vị trí bắt đầu = vị trí hiện tại - độ dài
+      }
+
+      // Reset để bắt đầu đoạn tăng mới
+      currentLength = 1;
+      continue;
+    }
+  }
+
+  // Kiểm tra đoạn cuối cùng (trường hợp đoạn tăng kết thúc ở cuối mảng)
+  if (currentLength >= maxLength) {
+    maxLength = currentLength;
+    currentPos = n - maxLength; // Vị trí bắt đầu đoạn cuối
+  }
+
+  k = currentPos;   // Lưu vị trí bắt đầu vào tham chiếu k
+  return maxLength; // Trả về độ dài
+}
