@@ -28,6 +28,7 @@ int timDoanConTangDaiNhat(int a[], int n, int &k);
 // 43. Viết hàm tìm đoạn con (liên tiếp) có tổng lớn nhất trong mảng (sử dụng
 // thuật toán Kadane).
 int timDoanConTongLonNhat(int a[], int n);
+int timDoanConTongLonNhat(int a[], int n, int &start, int &end);
 
 // 44. Viết hàm dịch phải xoay vòng mảng 𝑘 đơn vị.
 void dichPhaiXoayVongKDonVi(int a[], int n, int k);
