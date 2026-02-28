@@ -316,3 +316,11 @@ int main() {
 
   return 0;
 }
+
+/*
+ * ┌─────────────────────────────────┐
+ * │   150 EXERCISES COMPLETED ✓     │
+ * │   Blood, Sweat & Debug          │
+ * │   Thanks for stopping by! 😊    │
+ * └─────────────────────────────────┘
+ */
