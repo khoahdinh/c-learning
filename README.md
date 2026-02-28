@@ -11,7 +11,7 @@ I'll update this repository as I learn more ❤️
 
 ## Contact
 
-[![Email](https://img.shields.io/badge/Email-your.email@example.com-red?style=flat-square&logo=gmail)](mailto:khoahdinh@gmail.com)
+[![Email](https://img.shields.io/badge/Email-khoahdinh@gmail.com-red?style=flat-square&logo=gmail)](mailto:khoahdinh@gmail.com)
 
 ---
 
