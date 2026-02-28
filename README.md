@@ -9,6 +9,10 @@ This repository contains all my C programming exercises, organized by learning t
 
 I'll update this repository as I learn more ❤️
 
+## Contact
+
+[![Email](https://img.shields.io/badge/Email-your.email@example.com-red?style=flat-square&logo=gmail)](mailto:khoahdinh@gmail.com)
+
 ---
 
 # Problem-Solving Workflow / Quy trình giải bài toán
