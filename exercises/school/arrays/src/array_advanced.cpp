@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 
 #include "../include/array_advanced.h"
@@ -160,6 +161,7 @@ void chenMangBVaoMangA(int a[], int &n, int b[], int m, int k) {
 
 // 42.  Viết hàm tìm đoạn con (liên tiếp) tăng dài nhất trong mảng. Hàm trả về
 // độ dài của đoạn con và lưu vị trí bắt đầu 𝑘.
+
 int timDoanConTangDaiNhat(int a[], int n, int &k) {
 
   int maxLength = 1;     // Độ dài đoạn con tăng dài nhất
@@ -196,4 +198,201 @@ int timDoanConTangDaiNhat(int a[], int n, int &k) {
 
   k = currentPos;   // Lưu vị trí bắt đầu vào tham chiếu k
   return maxLength; // Trả về độ dài
+}
+
+// 43. Viết hàm tìm đoạn con (liên tiếp) có tổng lớn nhất trong mảng
+// (sử dụng thuật toán Kadane).
+
+// Cách 1:
+// int timDoanConTongLonNhat(int a[], int n, int &start, int &end) {
+
+//   int maxSum = INT_MIN;
+//   int currentSum = 0;
+
+//   start = 0;  // Vị trí bắt đầu đoạn có tổng lớn nhất
+//   end = 0;    // Vị trí kết thúc đoạn có tổng lớn nhất
+
+//   for (int i = 0; i < n; i++) {
+//     for (int j = i; j < n; j++) {
+//       currentSum = currentSum + a[j];
+//       if (currentSum > maxSum) {
+//         maxSum = currentSum;
+//         start = i;
+//         end = j;
+//       }
+//     }
+//     currentSum = 0;
+//   }
+//   return maxSum;
+// }
+
+// Cách 2:
+int max(int a, int b) { return (a > b) ? a : b; }
+
+int timDoanConTongLonNhat(int a[], int n) {
+
+  int maxCurrent = a[0]; // Tổng đoạn kết thúc tại i
+  int maxGlobal = a[0];  // Tổng lớn nhất tìm được
+
+  for (int i = 1; i < n; i++) {
+    maxCurrent = max(maxCurrent + a[i], a[i]);
+    maxGlobal = max(maxCurrent, maxGlobal);
+  }
+
+  return maxGlobal;
+}
+
+// Cách 2: Update vị trí Đoạn có tổng lớn nhất.
+
+int timDoanConTongLonNhat(int a[], int n, int &start, int &end) {
+
+  int maxCurrent = a[0]; // Tổng đoạn kết thúc tại i
+  int maxGlobal = a[0];  // Tổng lớn nhất tìm được
+
+  int currentStart = 0; // Vị trí bắt đầu đoạn hiện tại
+  start = 0;            // Vị trí bắt đầu đoạn tốt nhất
+  end = 0;              // Vị trí kết thúc đoạn tốt nhất
+
+  for (int i = 1; i < n; i++) {
+
+    // Nếu bắt đầu mới tốt hơn (a[i] > maxCurrent + a[i])
+    if (a[i] > maxCurrent + a[i]) {
+      maxCurrent = a[i];
+      currentStart = i; // Đoạn mới bắt đầu từ i
+    } else {
+      maxCurrent = maxCurrent + a[i]; // Giữ đoạn cũ
+    }
+
+    // Cập nhật tổng lớn nhất
+    if (maxCurrent > maxGlobal) {
+      maxGlobal = maxCurrent;
+      start = currentStart; // Lưu vị trí bắt đầu
+      end = i;              // Lưu vị trí kết thúc
+    }
+  }
+  return maxGlobal;
+}
+
+// 44. Viết hàm dịch phải xoay vòng mảng 𝑘 đơn vị.
+
+void dichPhaiXoayVongKDonVi(int a[], int n, int k) {
+
+  k = k % n;
+  if (k == 0)
+    return;
+
+  int temp[100];
+
+  // Lưu k phần tử cuối vào mảng tạm
+  for (int i = 0; i < k; i++) {
+    temp[i] = a[n - k + i];
+  }
+
+  // Dịch các phần tử còn lại sang phải
+  for (int i = n - 1; i >= k; i--) {
+    a[i] = a[i - k];
+  }
+
+  // Đưa k phần tử cuối về đầu
+  for (int i = 0; i < k; i++) {
+    a[i] = temp[i];
+  }
+}
+
+// 45.  Viết hàm tìm và in ra tất cả các cặp phần tử (𝑎[𝑖], 𝑎[𝑗]) trong mảng có
+// tổng bằng 𝑋 (với 𝑖 < 𝑗).
+
+void timCapSoTongBangX(int a[], int n, int X) {
+
+  int count = 0;
+  printf("Cac cap so co tong bang %d:\n", X);
+
+  for (int i = 0; i < n - 1; i++) {
+    for (int j = i + 1; j < n; j++) {
+      if (a[i] + a[j] == X) {
+        printf("(%d , %d)\n", a[i], a[j]);
+        count++;
+      }
+    }
+  }
+
+  if (count == 0) {
+    printf("Khong co cap nao!\n");
+  }
+}
+
+// 46. Viết hàm sắp xếp mảng sao cho các số lẻ tăng dần, các số chẵn giữ nguyên
+// vị trí.
+
+// Cách 1:
+// void sapXepSoLeTangDan(int a[], int n) {
+//   for (int i = 0; i < n - 1; i++) {
+//     if (a[i] % 2 == 0)
+//       continue;
+//     for (int j = i + 1; j < n; j++) {
+//       if (a[j] % 2 == 0)
+//         continue;
+//       if (a[i] > a[j]) {
+//         int temp = a[i];
+//         a[i] = a[j];
+//         a[j] = temp;
+//       }
+//     }
+//   }
+// }
+
+// Cách 2:
+void sapXepSoLeTangDan(int a[], int n) {
+  // Tách các số lẻ ra mảng riêng
+  int odd[100], oddIndex[100]; // Lưu giá trị và vị trí
+  int countOdd = 0;
+
+  for (int i = 0; i < n; i++) {
+    if (a[i] % 2 != 0) {
+      odd[countOdd] = a[i];
+      oddIndex[countOdd] = i;
+      countOdd++;
+    }
+  }
+
+  // Sắp xếp mảng số lẻ
+  for (int i = 0; i < countOdd - 1; i++) {
+    for (int j = i + 1; j < countOdd; j++) {
+      if (odd[i] > odd[j]) {
+        int temp = odd[i];
+        odd[i] = odd[j];
+        odd[j] = temp;
+      }
+    }
+  }
+
+  // Đưa số lẻ đã sắp xếp vào vị trí cũ
+  for (int i = 0; i < countOdd; i++) {
+    a[oddIndex[i]] = odd[i];
+  }
+}
+
+// 47. Cho mảng 𝑎 chứa 𝑛 số nguyên phân biệt trong khoảng từ 0 đến 𝑛. Viết hàm
+// tìm số duy nhất còn thiếu trong khoảng đó. (Ví dụ: mảng [0, 1, 3, 4] với 𝑛 =
+// 4 thì thiếu số 2).
+
+int timPhanTuConThieu(int a[], int n) {
+
+  int ketQua = 0;
+
+  // Bước 1: XOR tất cả số từ 0 đến n
+  // Sau bước này: ketQua = 0 ^ 1 ^ 2 ^ 3 ^ ... ^ n
+  for (int i = 0; i <= n; i++) {
+    ketQua ^= i;
+  }
+
+  // Bước 2: XOR tiếp với tất cả phần tử trong mảng
+  // Các số trùng nhau sẽ triệt tiêu (a ^ a = 0)
+  // Chỉ số thiếu sót sẽ còn lại (XOR có tính giao hoán a ^ b ^ a = b)
+  for (int i = 0; i < n; i++) {
+    ketQua ^= a[i];
+  }
+
+  // Số còn lại chính là số thiếu
+  return ketQua;
 }
