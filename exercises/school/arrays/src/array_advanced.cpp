@@ -396,3 +396,12 @@ int timPhanTuConThieu(int a[], int n) {
   // Số còn lại chính là số thiếu
   return ketQua;
 }
+
+/*
+ * ┌─────────────────────────────────┐
+ * │   150 EXERCISES COMPLETED       │
+ * │   Blood, Sweat & Debug          │
+ * │   Finished: February 28, 2026   │
+ * │   Thanks for stopping by!       │
+ * └─────────────────────────────────┘
+ */
