@@ -6,7 +6,7 @@ void nhapSoLuong(int &n) {
   do {
     printf("Nhap so luong phan tu cua mang: ");
     scanf("%d", &n);
-  } while (n < 0 || n > 100);
+  } while (n <= 0 || n > 100);
 }
 
 // a. Nhập mảng
