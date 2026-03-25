@@ -90,7 +90,7 @@ void tongTungDong(int a[][MAX], int n) {
 // g. Xuất ra các dòng có tổng lớn nhất.
 void inDongTongMax(int a[][MAX], int n) {
 
-  int max = INT_MIN; // hoặc INT_MIN nếu có số âm
+  int max = INT_MIN; 
   int dongMax = 0;
 
   for (int i = 0; i < n; i++) {
