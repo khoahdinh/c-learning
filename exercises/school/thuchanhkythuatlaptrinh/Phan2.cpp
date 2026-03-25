@@ -5,6 +5,7 @@
 // a. Nhập ma trận gồm d dòng và c cột (d, c nhập từ bàn phím)
 
 void nhapMangHaiChieu(int a[][MAX], int &d, int &c) {
+    
   do {
     printf("Nhap so luong dong: ");
     scanf("%d", &d);
