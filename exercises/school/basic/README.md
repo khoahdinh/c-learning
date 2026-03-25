@@ -5,3 +5,7 @@ All tasks are implemented in C and follow the topics I am currently learning in 
 
 Each file represents a separate exercise.  
 This section helps track my progress throughout the semester.
+
+## Assignment
+
+The full list of exercises can be found in [`assignment.pdf`](assignment.pdf).
