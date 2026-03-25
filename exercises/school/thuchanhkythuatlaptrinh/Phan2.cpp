@@ -10,7 +10,7 @@ void nhapMangHaiChieu(int a[][MAX], int &d, int &c) {
     scanf("%d", &d);
     printf("Nhap so luong cot: ");
     scanf("%d", &c);
-  } while (d < 0 || d > MAX || c < 0 || c > MAX);
+  } while (d <= 0 || d > MAX || c <= 0 || c > MAX);
 
   for (int i = 0; i < d; i++) {
     for (int j = 0; j < c; j++) {
