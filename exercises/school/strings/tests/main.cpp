@@ -8,7 +8,7 @@
 #include "../include/string_advanced.h"
 
 int main() {
-    char s[1000];
+    char s[MAX_STRING_LEN];
     
     // Test Nhóm 1
     printf("=== NHOM 1: NHAP/XUAT ===\n");

@@ -1,6 +1,8 @@
 #ifndef STRING_IO_H
 #define STRING_IO_H
 
+#define MAX_STRING_LEN 1000 
+
 // 1. Nhập chuỗi
 void nhapChuoi(char s[]);
 
